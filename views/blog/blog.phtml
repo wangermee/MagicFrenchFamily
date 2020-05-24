@@ -1,0 +1,32 @@
+<?php ob_start() ?>
+
+
+<main id="blog" class="wrapper">
+    <h1>Latest Posts</h1>
+    <div id="conteneur">
+        <?php foreach($listArticles as $article): ?>
+            <section>
+                <a href="article&id=<?= $article["id"] ?>" title="Read more">
+                    <div >
+                        <img src="uploadFile/articles/<?= $article["src_img"] ?>" alt="<?= $article["src_name"] ?>">
+                    </div>
+                    <div>
+                        <h2><?= $article["title"] ?></h2>
+                        <hr>
+                    </div>
+                    
+                        <p><?= $article["creation_date"] ?></p>
+                    
+                    <div>
+                        <p><?= $article["label"] ?></p>
+                    </div>
+                </a>
+            </section>  
+        <?php endforeach; ?>
+        </div>
+    
+</main>
+
+<?php 
+$content = ob_get_clean();
+?>

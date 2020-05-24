@@ -1,0 +1,27 @@
+<?php ob_start() ?>
+
+<section>
+    <h1>Update comments</h1>
+    
+    <form action="models/admin/actionUpdateComments.php" method="POST">
+        <fieldset>
+            <legend>Update comments</span></legend>
+
+            <label for="reply">reply</label>
+            <input type="text" id="reply" name="reply" value="<?= $comment["reply"] ?>" >
+            <p id="msgError"></p>
+            
+            <input type="hidden" id="id" name="id" value="<?= $comment["id"] ?>">
+
+            <div>
+                <button type="submit">VALIDATE</button>
+                <button id="btnResetAddForm" type="reset">CANCEL</button>
+            </div>
+        </fieldset>
+    </form>
+</section>
+    
+
+<?php 
+$content = ob_get_clean()
+?>

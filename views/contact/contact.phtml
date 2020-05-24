@@ -1,0 +1,81 @@
+<?php ob_start() ?>
+
+<main id="contact" class="formUser">
+    <div class="wrapper">
+        <h1>page contact</h1>
+        <form class="form" id="formContactSubmit"  action="models/actionFormContact.php" method="POST">
+            <div>
+                <div>
+                    <div>
+                        <label for="firstName">First Name<span class="blue">*</span></label>
+                    </div>
+                    <input type="text" id="firstName" name="firstName" required >
+                    <p id="firstNameError"></p>
+                </div>
+
+                <div>
+                    <div>
+                        <label for="lastName">Last Name<span class="blue">*</span></label>
+                    </div>
+                    <input type="text" id="lastName" name="lastName" required >
+                    <p id="lastNameError"></p>
+                </div>
+            </div>
+
+            <div>
+                <div>
+                    <div>
+                        <label for="email">Email<span class="blue">*</span></label>
+                    </div>
+                    <input type="email" id="email" name="email" required >
+                    <p id="emailError"></p>
+                </div>
+                
+                <div>
+                    <div>
+                        <label for="verifyEmail">Verify Email<span class="blue">*</span></label>
+                    </div>
+                    <input type="email" id="verifyEmail" name="verifyEmail" required >
+                    <p id="verifyEmailError"></p>
+                    <p id="Error"></p>
+                </div>
+
+
+
+            </div>
+
+            <div>
+                <div>
+                    <label for="phoneNumber">Phone Number <span id="tel" class="green">*</span></label>
+                </div>
+                <input type="tel" name="phoneNumber" id="phoneNumber">
+            </div>
+
+            <div>
+                <div>
+                    <label for="message">Message<span class="blue">*</span></label>
+                </div>
+                <textarea name="message" id="message" required ></textarea>
+                <p id="messageError"></p>
+            </div>
+
+            <div class="divBtn">
+                <button type="submit">Send</button>
+                <button type="reset">Cancel</button>
+            </div>
+        </form>
+
+        <div>
+            <p class="blue">* required</p>
+            <p class="green">* Not required and for French people only </p>
+        </div>
+
+    </div>
+</main>
+
+
+<?php
+$content = ob_get_clean();
+?>
+
+

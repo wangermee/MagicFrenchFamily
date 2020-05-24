@@ -1,0 +1,52 @@
+<?php ob_start() ?>
+
+
+<main id="article" class="wrapper">
+
+    <article>
+        <img src="uploadFile/articles/<?= $article["src_img"] ?>" alt="<?= $article["src_name"] ?>">
+        <h1><?= $article["title"] ?></h1>
+        
+        <div>
+            <p><?= $article["label"] ?> / <?= $article["user_name"] ?> / <?= $article["creation_date"] ?></p>
+        </div>
+        <hr>
+        <div id="content">
+            <?= $article["content"] ?> 
+        </div>
+    </article>
+
+    <section>
+        <?php if(isset($_SESSION["user"])):?>
+            <h2>Leave a reply</h2>
+            <form action="models/actionComments.php" method="post">
+                <textarea name="reply" id="reply"></textarea>
+                <p id="replyMsgError"></p>
+                <input type="hidden" name="user" id="user" value="<?= $_SESSION["user"]["id"] ?>">
+                <input type="hidden" name="articleId" id="articleId" value="<?= $article["id"] ?>">
+                <input type="hidden" name="categorie" id="categorie" value="<?= $article["id_category"] ?>">
+                
+                <button type="submit">Post</button>
+            </form>
+        <?php else:  ?>
+            <h2>You must be connected for posting a reply</h2>   
+        <?php endif; ?>
+    </section>
+
+
+
+    <section>
+        <h2>Comments (<?= $nbrComments ?>)</h2>
+        <?php foreach($commentsList as $comment): ?>
+           <div>
+                <p><i class="fas fa-comment"></i> <?= $comment["user_name"] ?> <span><?= $comment["post_date"] ?></span></p>
+                <p><?= $comment["reply"] ?></p>
+           </div> 
+        <?php endforeach; ?>
+    </section>
+       
+</main>
+
+<?php 
+$content = ob_get_clean();
+?>

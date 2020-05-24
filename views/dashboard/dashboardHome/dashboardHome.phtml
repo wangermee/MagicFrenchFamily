@@ -1,0 +1,27 @@
+<?php ob_start() ?>
+
+<section>
+    <h1>partie admin</h1>
+    <div>
+       <section>
+           <h2>Articles : <?= $nbrArticles ?></h2>
+       </section>
+
+       <section>
+           <h2>Users : <?= $nbrUsers ?></h2>
+       </section>
+
+       <section>
+           <h2>Comments : <?= $nbrComments ?></h2>
+       </section>
+
+       <section>
+           <h2>Category : <?= $nbrCategory ?></h2>
+       </section>
+    </div>
+</section>
+    
+
+<?php 
+$content = ob_get_clean()
+?>

@@ -1,0 +1,38 @@
+<?php ob_start() ?>
+
+<section>
+    <h1><?= $titleH2 ?> Card / Restricted List</h1>
+    
+    <form enctype="multipart/form-data" action="models/admin/actionAddUpdateCardsRestrictedList.php" method="POST">
+        <fieldset>
+            <legend><span><?= $titleH2 ?> Card</span></legend>
+
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" value="<?= $card["name"] ?>" required>
+            <p id="msgErrorName"></p> 
+
+            <select name="categorie" id="categorie">
+                <option value="0">categorie</option>
+                <?php foreach($listCategory as $categorie): ?>
+                <option value="<?= $categorie["id"] ?>" <?php if(isset($card["id_category"])&&$card["id_category"]==$categorie["id"]): ?>selected <?php endif; ?>><?= $categorie["label"] ?></option>
+                <?php endforeach; ?>
+            </select>
+            <p id="msgErrorCategorie"></p> 
+
+            <input type="hidden" id="id" name="id" value="<?= $card["id"] ?>">
+
+            <?php if($titleH2 == "Add"): ?>
+                <input type="file" id="file" name="file">     
+            <?php endif; ?>
+            <div>
+                <button type="submit">VALIDATE</button>
+                <button id="reset" type="reset">CANCEL</button>
+            </div>
+        </fieldset>
+    </form>
+</section>
+    
+
+<?php 
+$content = ob_get_clean()
+?>

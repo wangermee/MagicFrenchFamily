@@ -1,0 +1,163 @@
+<?php ob_start() ?>
+
+<main id="home">
+    <section id="displayBanner">
+        <div class="wrapper">
+            <h1 id="play">we play</h1>
+
+            <div id="containerBanner">
+
+                <div id="picture_1">
+                    <p>old school</p>
+                    <p>93/94</p>
+                </div>
+
+                <div id="picture_2">
+                    <p>old school</p>
+                    <p>95/96</p>
+                </div>
+
+                <div id="picture_3">
+                    <p>premodern</p>
+                    <p>95/03</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="wrapper borderBottom">
+            <h2><strong>Old school 93/94 rules</strong></h2>
+            <p>Old School 93-94 decks may consist of cards from sets printed in 1993-94, excluding all ante cards.</p>
+            <div class="banShowcaceCards">
+                <img src="assets/ressources/bannerOS93-94/chain-lightning.jpg" alt="chain-lightning">
+                <img src="assets/ressources/bannerOS93-94/leb-256-juggernaut.jpg" alt="juggernaut">
+                <img src="assets/ressources/bannerOS93-94/juzam-djinn.jpg" alt="juzam-djinn">
+                <img src="assets/ressources/bannerOS93-94/3ed-tropical-island.jpg" alt="3ed-tropical-island">
+            </div>
+
+            <h3>Legal Sets</h3>
+            <ul>
+                <li><a href="https://scryfall.com/sets/lea?as=grid&order=name" target="_blank" title="See all cards" >Alpha</a></li>
+                <li><a href="https://scryfall.com/sets/leb?as=grid&order=name" target="_blank" title="See all cards" >Beta</a></li>
+                <li><a href="https://scryfall.com/sets/2ed?as=grid&order=name" target="_blank" title="See all cards" >Unlimited</a></li>
+                <li><a href="https://scryfall.com/sets/arn?as=grid&order=name" target="_blank" title="See all cards" >Arabian Nights</a></li>
+                <li><a href="https://scryfall.com/sets/atq?as=grid&order=name" target="_blank" title="See all cards" >Antiquities</a></li>
+                <li><a href="https://scryfall.com/sets/3ed" target="_blank" title="See all cards" >Revised</a></li>
+                <li><a href="https://scryfall.com/sets/leg?as=grid&order=name" target="_blank" title="See all cards" >Legends</a></li>
+                <li><a href="https://scryfall.com/sets/drk?as=grid&order=name" target="_blank" title="See all cards" >The Dark</a></li>
+                <li><a href="https://scryfall.com/sets/fem?as=grid&order=name" target="_blank" title="See all cards" >Fallen Empires</a></li>
+            </ul>
+
+            <h3>Additional sets and cards Allowed</h3>
+            <p>93/94 gamers also allow all non-foil cards from the sets above, that were reprinted IN ANY LANGUAGE with the original frame and original art. So for example, a Chronicles City of Brass, Fifth Edition Wrath of God, Time Spiral Psionic Blast, and Collector’s Edition Mox Ruby would all be legal (original frame + original art), while an Ice Age Swords to Plowshares or tempest Counterspell would not be legal (different art). They always encourage you to seek out the oldest and coolest versions of cards you can find, but these can serve as your de facto substitutes for the cards printed in 93-94.</p>
+
+            <h3>Restricted cards</h3>
+            <div class="displayRestrictedCards">
+                <?php foreach($restrictedListOS93 as $card): ?>
+                    <img src="uploadFile/restrictedList/<?= $card["src"] ?>" alt="<?= $card["name"] ?>">
+                <?php endforeach; ?>
+            </div>
+            <div class="space" id="95-96"></div>
+        </div>
+    </section>
+
+    <section>
+        <div class="wrapper borderBottom">
+            <h2><strong>Old school 95/96 rules</strong></h2>
+            <p>Old School 95-96 decks may consist of cards from sets printed in 1995-96. Excluding Mirage and all ante cards.</p>
+            <div class="banShowcaceCards">
+                <img src="assets/ressources/bannerOS95-96/abbey-gargoyles.jpg" alt="abbey-gargoyles">
+                <img src="assets/ressources/bannerOS95-96/force-of-will.jpg" alt="force-of-will">
+                <img src="assets/ressources/bannerOS95-96/ball-lightning.jpg" alt="ball-lightning">
+                <img src="assets/ressources/bannerOS95-96/zuran-orb.jpg" alt="zuran-orb">
+            </div>
+
+            <h3>Legal Sets</h3>
+            <ul>
+                <li><a href="https://scryfall.com/sets/4ed?as=grid&order=name" target="_blank" title="See all cards" >4th edition</a></li>
+                <li><a href="https://scryfall.com/sets/fem?as=grid&order=name" target="_blank" title="See all cards" >Fallen empire</a></li>
+                <li><a href="https://scryfall.com/sets/ice?as=grid&order=name" target="_blank" title="See all cards" >Ice ages</a></li>
+                <li><a href="https://scryfall.com/sets/hml?as=grid&order=name" target="_blank" title="See all cards" >Homelands</a></li>
+                <li><a href="https://scryfall.com/sets/all?as=grid&order=name" target="_blank" title="See all cards" >Alliances</a></li>
+                <li><a href="https://scryfall.com/sets/chr?as=grid&order=name" target="_blank" title="See all cards" >Chronicles</a></li>
+                <li><a href="https://scryfall.com/sets/ren?as=grid&order=name" target="_blank" title="See all cards" >Renaissance</a></li>
+            </ul>
+
+            <h3>Additional sets and cards Allowed</h3>
+            <p>95/96 gamers also allow all non-foil cards from the sets above, that were reprinted IN ANY LANGUAGE with the original frame and original art. So for example, a Beta Dark ritual, Legends Land tax would all be legal (original frame + original art), while an Unlimited Icy Manipulator or tempest Counterspell would not be legal (different art). They always encourage you to seek out the coolest versions of cards you can find, printed in 95-96.</p>
+
+            <h3>Restricted cards</h3>
+            <div class="displayRestrictedCards">
+                <?php foreach($restrictedListOS95 as $card): ?>
+                    <img src="uploadFile/restrictedList/<?= $card["src"] ?>" alt="<?= $card["name"] ?>">
+                <?php endforeach; ?>
+            </div>
+            <div class="space" id="premodern"></div>
+        </div>
+    </section>
+
+    <section>
+        <div class="wrapper">
+            <h2><strong>Premodern 95/03 rules</strong></h2>
+            <p>Premodern 95/03 decks may consist of cards from sets printed in 1995-2003, excluding all ante cards.</p>
+            <div class="banShowcaceCards">
+                <img src="assets/ressources/bannerPremodern/muscle-sliver.jpg" alt="muscle-sliver">
+                <img src="assets/ressources/bannerPremodern/absorb.jpg" alt="absorb">
+                <img src="assets/ressources/bannerPremodern/fireblast.jpg" alt="fireblast">
+                <img src="assets/ressources/bannerPremodern/bloodstained-mire.jpg" alt="bloodstained-mire">
+            </div>
+
+            <h3>Legal Sets</h3>
+            <ul>
+                <li><a href="https://scryfall.com/sets/4ed?as=grid&order=name" target="_blank" title="See all cards" >4th edition</a></li>
+                <li><a href="https://scryfall.com/sets/ice?as=grid&order=name" target="_blank" title="See all cards" >Ice ages</a></li>
+                <li><a href="https://scryfall.com/sets/hml?as=grid&order=name" target="_blank" title="See all cards" >Homelands</a></li>
+                <li><a href="https://scryfall.com/sets/all?as=grid&order=name" target="_blank" title="See all cards" >Alliances</a></li>
+                <li><a href="https://scryfall.com/sets/chr?as=grid&order=name" target="_blank" title="See all cards" >Chronicles</a></li>
+                <li><a href="https://scryfall.com/sets/ren?as=grid&order=name" target="_blank" title="See all cards" >Renaissance</a></li>
+                <li><a href="https://scryfall.com/sets/mir?as=grid&order=name" target="_blank" title="See all cards" >Mirage</a></li>
+                <li><a href="https://scryfall.com/sets/vis?as=grid&order=name" target="_blank" title="See all cards" >Visions</a></li>
+                <li><a href="https://scryfall.com/sets/5ed?as=grid&order=name" target="_blank" title="See all cards" >5th edition</a></li>
+                <li><a href="https://scryfall.com/sets/wth?as=grid&order=name" target="_blank" title="See all cards" >Weatherlight</a></li>
+                <li><a href="https://scryfall.com/sets/tmp?as=grid&order=name" target="_blank" title="See all cards" >Tempest</a></li>
+                <li><a href="https://scryfall.com/sets/sth?as=grid&order=name" target="_blank" title="See all cards" >Stronghold</a></li>
+                <li><a href="https://scryfall.com/sets/exo?as=grid&order=name" target="_blank" title="See all cards" >Exodus</a></li>
+                <li><a href="https://scryfall.com/sets/usg?as=grid&order=name" target="_blank" title="See all cards" >Urza's saga</a></li>
+                <li><a href="https://scryfall.com/sets/ulg?as=grid&order=name" target="_blank" title="See all cards" >Urza's legacy</a></li>
+                <li><a href="https://scryfall.com/sets/6ed?as=grid&order=name" target="_blank" title="See all cards" >6th edition </a></li>
+                <li><a href="https://scryfall.com/sets/uds" target="_blank" title="See all cards" >Urza's destiny</a></li>
+                <li><a href="https://scryfall.com/sets/mmq" target="_blank" title="See all cards" >Mercadian masques</a></li>
+                <li><a href="https://scryfall.com/sets/nem" target="_blank" title="See all cards" >Nemesis</a></li>
+                <li><a href="https://scryfall.com/sets/pcy" target="_blank" title="See all cards" >Prophecy</a></li>
+                <li><a href="https://scryfall.com/sets/inv" target="_blank" title="See all cards" >Invasion</a></li>
+                <li><a href="https://scryfall.com/sets/pls" target="_blank" title="See all cards" >Planeshift</a></li>
+                <li><a href="https://scryfall.com/sets/7ed" target="_blank" title="See all cards" >7th edition</a></li>
+                <li><a href="https://scryfall.com/sets/apc" target="_blank" title="See all cards" >Apocalypse</a></li>
+                <li><a href="https://scryfall.com/sets/ody" target="_blank" title="See all cards" >Odyssey</a></li>
+                <li><a href="https://scryfall.com/sets/tor" target="_blank" title="See all cards" >Torment</a></li>
+                <li><a href="https://scryfall.com/sets/jud" target="_blank" title="See all cards" >Judgment</a></li>
+                <li><a href="https://scryfall.com/sets/ons" target="_blank" title="See all cards" >Onslaught</a></li>
+                <li><a href="https://scryfall.com/sets/lgn" target="_blank" title="See all cards" >Legions</a></li>
+                <li><a href="https://scryfall.com/sets/scg" target="_blank" title="See all cards" >Scourge</a></li>
+            </ul>
+
+            <h3>Additional sets and cards Allowed</h3>
+            <p>Premodern gamers also allow all foil cards from the sets above, that were reprinted IN ANY LANGUAGE WITH OR WITHOUT the original frame or original art. So for example, a Beta Dark ritual, Legends Land tax would all be legal (original frame + original art), as so an Unlimited Icy Manipulator or Masters 25 Counterspell would be legal (different art). They always encourage you to seek out the coolest versions of cards you can find, printed in 95-03.</p>
+
+            <h3>Restricted cards</h3>
+            <div class="displayRestrictedCards">
+                <?php foreach($restrictedListPremodern as $card): ?>
+                    <img src="uploadFile/restrictedList/<?= $card["src"] ?>" alt="<?= $card["name"] ?>">
+                <?php endforeach; ?>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+    
+<?php
+$content = ob_get_clean();
+?>

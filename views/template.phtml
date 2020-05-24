@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="For all the oldests Magic editions, old-school 93/94, 95/96, premodern. Alpha, beta, unlimited, arabaian nights, antiquities revised, legend, the dark, fallen empires, ice ages, alliances...">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Rock+Salt&display=swap" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Crete+Round&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Russo+One&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <title><?= $title ?></title>
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+</head>
+<body>
+    <header id="headerUser">
+        <div id="bkgTopHeader">
+            <div id="topHeader" class="wrapper">
+            
+                <?php if(isset($_SESSION["user"]) && $_SESSION["user"]["admin"]==1):?>
+                    <a id="dashboard" href="dashboardHome">dashboard <i class="fas fa-tools"></i></a>
+                <?php endif; ?>
+                <button id="btnBurger"><i class="fas fa-bars"></i></button>
+                <div id="burger">
+                    <nav id="navSmall">
+                        <a id="nav93" href="home">Rules <span class="number" >93/94</span></a>
+                        <a id="nav95" href="home#95-96">Rules <span class="number" >95/96</span></a>
+                        <a id="navPreMo" href="home#premodern">Rules Premodern</a>
+                        <a id="navBlog" href="blog">Blog</a>
+                        <a id="navContact" href="contact">Contact</a>
+                    </nav>
+                </div>
+
+                <?php if(isset($_SESSION["user"])):?>
+                    <a id="connect" href="models/actionDeconnexion.php?path=<?= $path ?>" title="Logout">Logout</a>
+                <?php else: ?>
+                    <a id="connect" href="connexion" title="login / create account">Login / Register</a> 
+                <?php endif; ?>
+            </div>
+        </div>
+
+		<div class="wrapper">
+			<div id="titleHeader">
+                <a href="home" title="home"><span id="magic">Magic</span> French Family</a>
+			</div>
+            
+            <nav id="navXL">
+                <a id="nav93" href="home">Rules <span class="number" >93/94</span></a>
+                <a id="nav95" href="home#95-96">Rules <span class="number" >95/96</span></a>
+                <a id="navPreMo" href="home#premodern">Rules Premodern</a>
+                <a id="navBlog" href="blog" title="decks / reviews and more">Blog</a>
+                <a id="navContact" href="contact" title="contact us by mail">Contact</a>
+            </nav>
+		</div>
+    </header>
+
+    
+    <?= $content ?>
+    
+
+    <footer id="footerUser">
+        <div id="titleFooter" class="wrapper">
+            <a href="home" title="home"><span id="magic">Magic</span> French Family</a>
+        </div>
+
+        <div id="bkgInfoFooter">
+            <div id="infoFooter" class="wrapper">
+                <p>This website is constructed by Wangermée Xavier. It contains unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast. ©Wizards of the Coast LLC.</p>
+            </div> 
+        </div>
+        
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    <?php if(isset($js)): ?>
+            <script type="text/javascript" src="<?= $js ?>" ></script>
+    <?php endif; ?> 
+    <script type="text/javascript" src="assets/js/main.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
+</body>
+</html>

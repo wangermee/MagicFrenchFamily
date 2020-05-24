@@ -1,0 +1,30 @@
+<?php ob_start() ?>
+
+<section>
+    <h1><?= $titleH ?> category</h1>
+    
+    <form action="models/admin/actionAddUpdateCategory.php" method="POST">
+        <fieldset>
+            <legend><span><?= $titleH ?> category</span></legend>
+
+            <label for="label">Label</label>
+            <input type="text" id="label" name="label" value="<?= $categorie["label"] ?>" required>
+            <p id="msgError"></p>
+            
+            <label for="format">Format played</label>
+<input type="checkbox" name="format" id="format" value="1" <?php if($categorie["play_format"]==1): ?>checked<?php endif; ?>>
+
+            <input type="hidden" id="id" name="id" value="<?= $categorie["id"] ?>">
+
+            <div>
+                <button type="submit">VALIDATE</button>
+                <button id="btnResetAddForm" type="reset">CANCEL</button>
+            </div>
+        </fieldset>
+    </form>
+</section>
+    
+
+<?php 
+$content = ob_get_clean()
+?>

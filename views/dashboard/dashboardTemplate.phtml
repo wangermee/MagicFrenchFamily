@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="For all the oldests Magic editions, old-school 93/94, 95/96, premodern. Alpha, beta, unlimited, arabaian nights, antiquities revised, legend, the dark, fallen empires, ice ages, alliances...">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Rock+Salt&display=swap" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Crete+Round&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Russo+One&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title><?= $title ?></title>
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- rajouter favicon -->
+</head>
+<body>
+    <header id="headerAdmin">
+                <button id="btnBurger"><i class="fas fa-bars"></i></button>
+                <a href="models/actionDeconnexion.php?path=home" title="Logout"><span>Logout <i class="fas fa-tools"></i></span></a>
+    </header>
+
+    <main id="templateDashboard">
+        <aside id="burger">   
+            <section>
+                <h2>Public <span><i class="fas fa-users"></i></span></h2>    
+                <nav>
+                    <ul>
+                        <li><a href="home">Home</a></li>
+                        <li><a href="home">Rules <span class="number" >93/94</span></a></li>
+                        <li><a href="home#95-96">Rules <span class="number" >95/96</span></a></li>
+                        <li><a href="home#premodern">Rules Premodern</a></li>
+                        <li><a href="blog">Blog</a></li>
+                        <li><a href="contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </section>
+
+            <section>
+                <h2>Administrator <span><i class="fas fa-industry"></i></span></h2>
+                <nav>
+                    <ul>
+                        <li><a href="dashboardHome">Dashboard Home</a></li>
+                        <li><a href="articles">Articles</a></li>
+                        <li><a href="users">Users</a></li>
+                        <li><a href="category">Category</a></li>
+                        <li><a href="restrictedList">Restricted List</a></li>
+                        <li><a href="comments">Comments</a></li>
+                    </ul>
+                </nav>
+            </section>
+        </aside>
+
+        <div>
+            <?= $content ?>
+        </div>
+    </main>
+
+    <footer id="footerUser">
+        <div id="titleFooter" class="wrapper">
+            <a href="home"><span id="magic">Magic</span> French Family</a>
+        </div>
+
+        <div id="bkgInfoFooter">
+            <div id="infoFooter" class="wrapper">
+                <p>This website is constructed by Wangermée Xavier. It contains unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast. ©Wizards of the Coast LLC.</p>
+            </div> 
+        </div>
+        
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    <?php if(isset($js)): ?>
+            <script type="text/javascript" src="<?= $js ?>" ></script>
+    <?php endif; ?> 
+    <script type="text/javascript" src="assets/js/mainDashboard.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
+    
+
+</body>
+</html>

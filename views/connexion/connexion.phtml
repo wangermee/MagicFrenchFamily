@@ -1,0 +1,80 @@
+
+<?php ob_start(); ?>
+
+<main class="formUser" >   
+    <div class="wrapper">
+        <section id="login" class="form">
+            <h2>Sign into an existing account</h2>
+            <form id="formSign" action="models/actionConnexion.php" method="POST">
+
+                <div>
+                    <label for="email">Email Address</label>
+                </div>
+                <input type="email" name="email" id="email">
+                <p id="signMsgErrorEmail"></p>
+
+                <div>
+                    <label for="password">Password</label>
+                </div>
+                <input type="password" name="password" id="password">
+                <p id="signMsgErrorPassword"></p>
+
+                <input type="hidden" name="action" value="login">
+                <div class="divBtn">
+                    <button type="submit">Login</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="register" class="form">
+            <h2>Register a new account</h2>
+            <form id="formRegister" action="models/actionConnexion.php" method="POST">
+
+                <div>
+                    <label for="userName">User name</label>
+                </div>
+                <input type="text" name="userName" id="userName">
+                <p id="registerMsgErrorUserName"></p>
+                
+
+                <div>
+                    <label for="registerEmail">Email Address</label>
+                </div>
+                <input type="email" name="registerEmail" id="registerEmail">
+                <p id="registerMsgErrorEmail"></p>
+                
+
+                <div>
+                    <label for="registerVerifyEmail">Verify Email<span class="blue">*</span></label>
+                </div>
+                <input type="email" id="registerVerifyEmail" name="registerVerifyEmail"  >
+                <p id="registerVerifyEmailMsgError"></p>
+                <p id="matchEmailError"></p>
+
+
+                <div>
+                    <label for="registerPassword">Password</label>
+                </div>
+                <input type="password" name="registerPassword" id="registerPassword">
+                <p id="registerPasswordMsgError"></p>
+
+                <div>
+                    <label for="registerVerifyPassword">Verify password<span class="blue">*</span></label>
+                </div>
+                <input type="password" id="registerVerifyPassword" name="registerVerifyPassword">
+                <p id="registerVerifyPasswordMsgError"></p>
+                <p id="matchPasswordError"></p>
+
+
+                <input type="hidden" name="action" value="register">
+                <div class="divBtn">
+                    <button type="submit">Register</button>
+                </div>
+            </form>
+        </section>
+    </div>
+</main>
+
+<?php
+$content = ob_get_clean();
+?>
