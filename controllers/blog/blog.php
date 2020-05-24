@@ -6,7 +6,6 @@ $query= $pdo->prepare('SELECT articles.id AS id, title, content, id_category, id
 $query->execute();
 $listArticles = $query->fetchall(PDO::FETCH_ASSOC);
 
-// COUCOU
 
 require "views/blog/blog.phtml";
 $title="Magic French Family/ blog";
