@@ -1,6 +1,4 @@
 <?php
-require ("models/dbConnect/dbConnect.php");
-session_start();
 
 $query= $pdo->prepare('SELECT name, src FROM restricted_list WHERE state=0 AND id_category=10 ORDER BY name');
 $query->execute();

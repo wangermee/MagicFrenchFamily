@@ -50,8 +50,12 @@ if ($id>0) {
 }
 
 /* MESSAGE DE FIN */
-if ($isSuccess == true) {
+if ($isSuccess) {
     $arr = array("msg"=>"action completed with success","error"=>false);
+    echo(json_encode($arr));
+    return;
+}else{
+    $arr = array("msg"=>"error, action aborted","error"=>false);
     echo(json_encode($arr));
     return;
 }

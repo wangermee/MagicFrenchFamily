@@ -1,5 +1,6 @@
 <?php
-
+require ("models/dbConnect/dbConnect.php");
+session_start();
 
 if (empty($_GET["page"])) {
     require "controllers/home/home.php";
@@ -53,8 +54,8 @@ if (empty($_GET["page"])) {
         case"addAuthors" : require "controllers/dashboard/addAuthors/addAuthors.php";
         break;
 
-        case"updateComments" : require "controllers/dashboard/UpdateComments/UpdateComments.php";
-    break;
+        case"updateComments" :require "controllers/dashboard/updateComments/updateComments.php";
+        break;
 
         default: require "controllers/home/home.php";
 

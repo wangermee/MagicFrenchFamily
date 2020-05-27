@@ -7,56 +7,70 @@
         <fieldset>
             <legend><span> <?= $titleH ?> ARTICLE</span></legend>
 
-            <label for="title">title</label>
-            <input type="text" id="title" name="title" value="<?= $article["title"] ?>">
-            <p id="msgErrorTitle"></p>
-
             <div>
-                <select name="categorie" id="categorie">
-                    <option value="0">categorie</option>
-                    <?php foreach($listCategory as $categorie): ?>
-                        <option value="<?= $categorie["id"] ?>" <?php if(isset($article["id_category"])&&$article["id_category"]==$categorie["id"]): ?>selected <?php endif; ?>><?= $categorie["label"] ?></option>
-                    <?php endforeach; ?>
-                </select>
-                <p id="msgErrorCategorie"></p>
-
-                <select name="author" id="author">
-                    <option value="0">author</option>
-                    <?php foreach($listAuthors as $author): ?>
-                        <option value="<?= $author["id"] ?>" <?php if(isset($article["id_users"])&&$article["id_users"]==$author["id"]): ?>selected <?php endif; ?>><?= $author["user_name"] ?></option>
-                    <?php endforeach; ?>
-                           
-                </select>
-                <p id="msgErrorAuthor"></p>
-                 
-
-                <?php if($titleH=="Update"): ?>
-
-                    <img src="uploadFile/articles/<?= $article["src_img"] ?>" alt="<?= $article["name_img"] ?>">
-                    
-                <?php endif; ?>
-
-
                 <div>
-                    <?php if($titleH=="Update"): ?> 
-                        <label for="file">Change the actual image :</label>
-                    <?php endif; ?>
-                    
-                    <input type="file" id="file" name="file">
-
-                    <label for="imageName">Name image</label>
-                    <input type="text" id="imageName" name="imageName" value="<?= $article["name_img"] ?>">
-                    <p id="msgErrorImageName"></p>  
-                </div>    
-
-                
-
+                    <label for="title">title</label>
+                </div>
+                <input type="text" id="title" name="title" value="<?= $article["title"] ?>">
+                <p id="msgErrorTitle"></p>
             </div>
             
+            <div id="conteneurSelect">
+                <div>
+                    <select name="categorie" id="categorie">
+                        <option value="0">categorie</option>
+                        <?php foreach($listCategory as $categorie): ?>
+                            <option value="<?= $categorie["id"] ?>" <?php if(isset($article["id_category"])&&$article["id_category"]==$categorie["id"]): ?>selected <?php endif; ?>><?= $categorie["label"] ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                    <p id="msgErrorCategorie"></p>
+                </div>
 
-            <label for="content">content</label>
-            <textarea  name="content" id="content"><?= $article["title"] ?></textarea>
-            <p id="msgErrorContent"></p>
+                <div>
+                    <select name="author" id="author">
+                        <option value="0">author</option>
+                        <?php foreach($listAuthors as $author): ?>
+                            <option value="<?= $author["id"] ?>" <?php if(isset($article["id_users"])&&$article["id_users"]==$author["id"]): ?>selected <?php endif; ?>><?= $author["user_name"] ?></option>
+                        <?php endforeach; ?>
+                            
+                    </select>
+                    <p id="msgErrorAuthor"></p>
+                </div>                                  
+            </div>
+
+            <?php if($titleH=="Update"): ?>
+
+                <img src="uploadFile/articles/<?= $article["src_img"] ?>" alt="<?= $article["name_img"] ?>">
+
+            <?php endif; ?>
+
+
+            <div id="conteneurInputFile">
+                <div id="smallScreen">
+                    <?php if($titleH=="Update"): ?> 
+                        <label for="file">Change the actual image <i class="fas fa-download"></i></label>
+                    <?php else: ?>
+                        <label for="file">Select image <i class="fas fa-download"></i></label>
+                    <?php endif; ?>
+                </div>
+                <input class="inputFile" type="file" id="file" name="file">
+            </div> 
+            
+            <div>
+                <div>
+                    <label for="imageName">Name image</label>
+                </div>
+                <input  type="text" id="imageName" name="imageName" value="<?= $article["name_img"] ?>">
+                <p id="msgErrorImageName"></p>  
+            </div>
+                
+            <div>
+                <div>
+                    <label for="content">content</label>
+                </div>
+                <textarea  name="content" id="content"><?= $article["content"] ?></textarea>
+                <p id="msgErrorContent"></p>
+            </div>
 
             <input type="hidden" id="id" name="id" value="<?= $article["id"] ?>">
 

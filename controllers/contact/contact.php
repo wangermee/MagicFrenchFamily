@@ -1,7 +1,4 @@
 <?php
-session_start();
-
-
 
 require "views/contact/contact.phtml";
 $title="Magic French Family/ contact";

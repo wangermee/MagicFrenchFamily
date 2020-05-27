@@ -7,5 +7,3 @@ try {
 } catch(PDOException $e) {
     die ('Échec lors de la connexion : ' . $e->getMessage());
 }
-// pour que la date soit en fr
-//$pdo -> query("SET lc_time_names = 'fr_FR';");

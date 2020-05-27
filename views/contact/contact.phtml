@@ -2,14 +2,13 @@
 
 <main id="contact" class="formUser">
     <div class="wrapper">
-        <h1>page contact</h1>
         <form class="form" id="formContactSubmit"  action="models/actionFormContact.php" method="POST">
-            <div>
+            <div class="formConteneur">
                 <div>
                     <div>
                         <label for="firstName">First Name<span class="blue">*</span></label>
                     </div>
-                    <input type="text" id="firstName" name="firstName" required >
+                    <input type="text" id="firstName" name="firstName" >
                     <p id="firstNameError"></p>
                 </div>
 
@@ -17,17 +16,17 @@
                     <div>
                         <label for="lastName">Last Name<span class="blue">*</span></label>
                     </div>
-                    <input type="text" id="lastName" name="lastName" required >
+                    <input type="text" id="lastName" name="lastName" >
                     <p id="lastNameError"></p>
                 </div>
             </div>
 
-            <div>
+            <div class="formConteneur">
                 <div>
                     <div>
                         <label for="email">Email<span class="blue">*</span></label>
                     </div>
-                    <input type="email" id="email" name="email" required >
+                    <input type="email" id="email" name="email">
                     <p id="emailError"></p>
                 </div>
                 
@@ -35,13 +34,10 @@
                     <div>
                         <label for="verifyEmail">Verify Email<span class="blue">*</span></label>
                     </div>
-                    <input type="email" id="verifyEmail" name="verifyEmail" required >
+                    <input type="email" id="verifyEmail" name="verifyEmail">
                     <p id="verifyEmailError"></p>
                     <p id="Error"></p>
                 </div>
-
-
-
             </div>
 
             <div>
@@ -55,7 +51,7 @@
                 <div>
                     <label for="message">Message<span class="blue">*</span></label>
                 </div>
-                <textarea name="message" id="message" required ></textarea>
+                <textarea name="message" id="message"></textarea>
                 <p id="messageError"></p>
             </div>
 

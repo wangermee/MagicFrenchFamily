@@ -1,7 +1,5 @@
 <?php
-require ("models/dbConnect/dbConnect.php");
 
-session_start();
 
 if (!isset($_SESSION["user"]) || isset($_SESSION["user"])&& $_SESSION["user"]["admin"]!=1) { 
     header("Location:home");
@@ -16,7 +14,7 @@ if (isset($_GET["id"])) {
 }
 
 
-require "views/dashboard/UpdateComments/UpdateComments.phtml";
+require "views/dashboard/updateComments/updateComments.phtml";
 $title="Magic French Family/update comments";
 $js="assets/js/scriptUpdateComments.js";
 require "views/dashboard/dashboardTemplate.phtml";

@@ -8,7 +8,7 @@
             <legend>Update comments</span></legend>
 
             <label for="reply">reply</label>
-            <input type="text" id="reply" name="reply" value="<?= $comment["reply"] ?>" >
+            <textarea id="reply" name="reply"><?= $comment["reply"] ?></textarea>
             <p id="msgError"></p>
             
             <input type="hidden" id="id" name="id" value="<?= $comment["id"] ?>">

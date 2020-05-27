@@ -3,5 +3,6 @@ $(document).ready(function(){
         $("#burger").toggle(300);   
     });
 
+    $(".animate").show(1000);//annimation contenu dashboardHome
 
 });

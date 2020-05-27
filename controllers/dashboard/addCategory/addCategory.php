@@ -1,7 +1,5 @@
 <?php
-require ("models/dbConnect/dbConnect.php");
 
-session_start();
 
 if (!isset($_SESSION["user"]) || isset($_SESSION["user"])&& $_SESSION["user"]["admin"]!=1) { 
     header("Location:home");

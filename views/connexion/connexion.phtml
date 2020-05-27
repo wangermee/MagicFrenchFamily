@@ -36,34 +36,45 @@
                 <input type="text" name="userName" id="userName">
                 <p id="registerMsgErrorUserName"></p>
                 
+                <div class="formConteneur">
+                    <div>
+                        <div>
+                            <label for="registerEmail">Email Address</label>
+                        </div>
+                        <input type="email" name="registerEmail" id="registerEmail">
+                        <p id="registerMsgErrorEmail"></p>
+                    </div>
 
-                <div>
-                    <label for="registerEmail">Email Address</label>
+                    
+                    <div>
+                        <div>
+                            <label for="registerVerifyEmail">Verify Email<span class="blue">*</span></label>
+                        </div>
+                        <input type="email" id="registerVerifyEmail" name="registerVerifyEmail"  >
+                        <p id="registerVerifyEmailMsgError"></p>
+                        <p id="matchEmailError"></p>
+                    </div>
                 </div>
-                <input type="email" name="registerEmail" id="registerEmail">
-                <p id="registerMsgErrorEmail"></p>
-                
 
-                <div>
-                    <label for="registerVerifyEmail">Verify Email<span class="blue">*</span></label>
+                <div class="formConteneur">
+                    <div>
+                        <div>
+                            <label for="registerPassword">Password</label>
+                        </div>
+                        <input type="password" name="registerPassword" id="registerPassword">
+                        <p id="registerPasswordMsgError"></p>
+                    </div>
+
+                    <div>
+                        <div>
+                            <label for="registerVerifyPassword">Verify password<span class="blue">*</span></label>
+                        </div>
+                        <input type="password" id="registerVerifyPassword" name="registerVerifyPassword">
+                        <p id="registerVerifyPasswordMsgError"></p>
+                        <p id="matchPasswordError"></p>
+                    </div>
                 </div>
-                <input type="email" id="registerVerifyEmail" name="registerVerifyEmail"  >
-                <p id="registerVerifyEmailMsgError"></p>
-                <p id="matchEmailError"></p>
 
-
-                <div>
-                    <label for="registerPassword">Password</label>
-                </div>
-                <input type="password" name="registerPassword" id="registerPassword">
-                <p id="registerPasswordMsgError"></p>
-
-                <div>
-                    <label for="registerVerifyPassword">Verify password<span class="blue">*</span></label>
-                </div>
-                <input type="password" id="registerVerifyPassword" name="registerVerifyPassword">
-                <p id="registerVerifyPasswordMsgError"></p>
-                <p id="matchPasswordError"></p>
 
 
                 <input type="hidden" name="action" value="register">

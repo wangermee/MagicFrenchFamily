@@ -22,11 +22,11 @@
             <tbody>
                 <?php foreach($listRestrictedList as $card): ?>
                     <tr>
-                        <td><?= $card["id"] ?></td>
-                        <td><?= $card["name"] ?></td>
+                        <td data-label="ID: "><?= $card["id"] ?></td>
+                        <td data-label="NAME: "><?= $card["name"] ?></td>
                         <td><img src="uploadFile/restrictedList/<?= $card["src"] ?>" alt="<?= $card["name"] ?>"></td>
-                        <td><?php if(strlen($card["src"])>8){echo(substr($card["src"], 0, 8)."...");} ?></td>
-                        <td><?= $card["label"] ?></td>
+                        <td data-label="SRC: "><?php if(strlen($card["src"])>8){echo(substr($card["src"], 0, 8)."...");} ?></td>
+                        <td data-label="CATEGORIE: "><?= $card["label"] ?></td>
                         <td>
                             <?php if($card["state"]==0){ ?>
                                 <a id="show" href="models/admin/actionShowHideRestrictedCards.php?id=<?= $card["id"] ?>">SHOW <i class='fas fa-eye'></i></a>    

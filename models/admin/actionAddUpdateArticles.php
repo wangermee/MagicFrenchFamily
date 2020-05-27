@@ -15,13 +15,12 @@ $isSuccess=true;
 /* RECUPERATION ET VERIFICATION DES CHAMPS DU FORM */ 
 if (isset($_POST["title"])) {
     $title = verifyInput($_POST["title"]);
-    $content = verifyInput($_POST["content"]);
+    $content=htmlentities($_POST["content"], ENT_QUOTES); //transforme le code HTML avant insertion dans base de donnée
     $categorie = verifyInput($_POST["categorie"]);
     $author = verifyInput($_POST["author"]);
     $id = verifyInput($_POST["id"]);
     $imageName = verifyInput($_POST["imageName"]);
 
-    
 
     if (strlen($title)==0) {//test si champ title est vide
         $isSuccess=false;
@@ -81,12 +80,20 @@ if (isset($_POST["title"])) {
     }
     
     
+    
 
     /* CREATION D UN ARTICLE */
     if (isset($_FILES["file"]) && $id=="0") {
         //verifivation securite
         $file = $_FILES["file"];
-
+        
+                $sizeFile = $file["size"];//verification taille
+        if($sizeFile > 3 * 1024 * 1024){
+            $isSuccess=false;
+            $arr=array("msg"=>"invalid action, file size max 5Mo","error"=>true);
+            echo(json_encode($arr));
+            return;
+        }
      
         if($file["error"] != 0 ){ // pas de fichier à uploder 
             $isSuccess=false;
@@ -102,13 +109,7 @@ if (isset($_POST["title"])) {
             return;
         }
 
-        $sizeFile = $file["size"];//verification taille
-        if($sizeFile > 3 * 1024 * 1024){
-            $isSuccess=false;
-            $arr=array("msg"=>"invalid action, file size max 5Mo","error"=>true);
-            echo(json_encode($arr));
-            return;
-        }
+
         
         // on verifie le type de fichier
         $typeFile = mime_content_type($file["tmp_name"]);
@@ -133,8 +134,12 @@ if (isset($_POST["title"])) {
             $query = $pdo->prepare('INSERT INTO articles (title, content, id_category, id_users, name_img, src_img) VALUES (:title, :content, :id_category, :id_users, :name_img, :src_img ) ');
             $query->execute(["title"=>$title, "content"=>$content, "id_category"=>$categorie, "id_users"=>$author, "name_img"=>$imageName,"src_img"=>$uploadfileName]);
 
-            if ($isSuccess=true) {
+            if ($isSuccess) {
                 $arr = array("msg"=>"action completed with success","error"=>false);
+                echo(json_encode($arr));
+                return;
+            }else{
+                $arr = array("msg"=>"error, action aborted","error"=>false);
                 echo(json_encode($arr));
                 return;
             }
@@ -192,8 +197,12 @@ if (isset($_POST["title"])) {
                 $query = $pdo->prepare('UPDATE articles SET title=:title, content=:content, id_category=:id_category, id_users=:id_users, name_img=:name_img, src_img=:src_img WHERE id=:id ');
                 $query->execute(["title"=>$title, "content"=>$content, "id_category"=>$categorie, "id_users"=>$author, "name_img"=>$imageName,"src_img"=>$uploadfileName, "id"=>$id]);
     
-                if ($isSuccess=true) {
+                if ($isSuccess) {
                     $arr = array("msg"=>"action completed with success","error"=>false);
+                    echo(json_encode($arr));
+                    return;
+                }else{
+                    $arr = array("msg"=>"error, action aborted","error"=>false);
                     echo(json_encode($arr));
                     return;
                 }

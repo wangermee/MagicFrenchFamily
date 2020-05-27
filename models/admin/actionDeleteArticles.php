@@ -36,7 +36,7 @@ if ($id>0) {
 }
 
 /* MESSAGE DE FIN */
-if ($isSuccess == true) {
+if ($isSuccess) {
 
     /* SUPPRESSION DU FICHIER EN LOCAL */
     unlink("../../uploadFile/articles/$src");
@@ -47,6 +47,10 @@ if ($isSuccess == true) {
 
 
     $arr = array("msg"=>"action completed with success","error"=>false);
+    echo(json_encode($arr));
+    return;
+}else{
+    $arr = array("msg"=>"error, action aborted","error"=>false);
     echo(json_encode($arr));
     return;
 }

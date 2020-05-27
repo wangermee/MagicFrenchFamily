@@ -21,5 +21,21 @@ $(document).ready(function(){
         $(this).removeClass("zoomImgBlog");
     });
 
+    if (window.matchMedia("(min-width: 992px)").matches) {//annimation nav user
+        $("#navXL").hide(900);
+        $("#navXL").show(600);
+    
+        $("#navXL a:nth-child(2)").click(function(){
+            $("#navXL").hide(1000);
+            $("#navXL").show(800);
+        });
+    
+        $("#navXL a:nth-child(3)").click(function(){
+            $("#navXL").hide(1000);
+            $("#navXL").show(800);
+        });
+        
+      }
+
     
 });

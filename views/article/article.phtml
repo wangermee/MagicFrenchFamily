@@ -4,7 +4,7 @@
 <main id="article" class="wrapper">
 
     <article>
-        <img src="uploadFile/articles/<?= $article["src_img"] ?>" alt="<?= $article["src_name"] ?>">
+        <img src="uploadFile/articles/<?= $article["src_img"] ?>" alt="<?= $article["name_img"] ?>">
         <h1><?= $article["title"] ?></h1>
         
         <div>
@@ -12,7 +12,7 @@
         </div>
         <hr>
         <div id="content">
-            <?= $article["content"] ?> 
+            <?= $content ?> 
         </div>
     </article>
 
@@ -21,15 +21,19 @@
             <h2>Leave a reply</h2>
             <form action="models/actionComments.php" method="post">
                 <textarea name="reply" id="reply"></textarea>
-                <p id="replyMsgError"></p>
+                
                 <input type="hidden" name="user" id="user" value="<?= $_SESSION["user"]["id"] ?>">
                 <input type="hidden" name="articleId" id="articleId" value="<?= $article["id"] ?>">
                 <input type="hidden" name="categorie" id="categorie" value="<?= $article["id_category"] ?>">
                 
-                <button type="submit">Post</button>
+                <div>
+                    <button type="submit">Post</button>
+                    <p id="replyMsgError"></p>
+                </div>
+                
             </form>
         <?php else:  ?>
-            <h2>You must be connected for posting a reply</h2>   
+            <h2>You must be connected for posting</h2>   
         <?php endif; ?>
     </section>
 

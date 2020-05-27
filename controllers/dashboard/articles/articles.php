@@ -1,7 +1,5 @@
 <?php
-require ("models/dbConnect/dbConnect.php");
 
-session_start();
 
 if (!isset($_SESSION["user"]) || isset($_SESSION["user"])&& $_SESSION["user"]["admin"]!=1) { 
     header("Location:home");
@@ -14,6 +12,10 @@ $query->execute();
 $listArticles = $query->fetchall(PDO::FETCH_ASSOC);
 
 
+/* DECODE LE CODE HTML DU CONTENU */
+for ($i=0; $i < count($listArticles) ; $i++) { 
+    $listArticles[$i]["content"]=html_entity_decode($listArticles[$i]["content"]);
+}
 
 
 require "views/dashboard/articles/articles.phtml";

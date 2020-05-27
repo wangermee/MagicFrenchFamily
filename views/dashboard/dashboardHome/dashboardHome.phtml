@@ -1,22 +1,22 @@
 <?php ob_start() ?>
 
-<section>
+<section id="dashboardHome">
     <h1>partie admin</h1>
     <div>
-       <section>
-           <h2>Articles : <?= $nbrArticles ?></h2>
+       <section class="animate">
+           <h2>Articles : <?= $nbrArticles ?> <i class="fas fa-edit"></i></h2>
        </section>
 
-       <section>
-           <h2>Users : <?= $nbrUsers ?></h2>
+       <section class="animate">
+           <h2>Users : <?= $nbrUsers ?> <i class="fas fa-users"></i></h2>
        </section>
 
-       <section>
-           <h2>Comments : <?= $nbrComments ?></h2>
+       <section class="animate">
+           <h2>Comments : <?= $nbrComments ?> <i class="fas fa-comments"></i></h2>
        </section>
 
-       <section>
-           <h2>Category : <?= $nbrCategory ?></h2>
+       <section class="animate">
+           <h2>Category : <?= $nbrCategory ?> <i class="fas fa-folder-open"></i></h2>
        </section>
     </div>
 </section>

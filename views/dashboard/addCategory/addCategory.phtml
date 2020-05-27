@@ -7,12 +7,18 @@
         <fieldset>
             <legend><span><?= $titleH ?> category</span></legend>
 
-            <label for="label">Label</label>
-            <input type="text" id="label" name="label" value="<?= $categorie["label"] ?>" required>
-            <p id="msgError"></p>
+            <div>
+                <div>
+                    <label for="label">Label</label>
+                </div>
+                <input type="text" id="label" name="label" value="<?= $categorie["label"] ?>" required>
+                <p id="msgError"></p>
+            </div>
+            
+
             
             <label for="format">Format played</label>
-<input type="checkbox" name="format" id="format" value="1" <?php if($categorie["play_format"]==1): ?>checked<?php endif; ?>>
+            <input type="checkbox" name="format" id="format" value="1" <?php if($categorie["play_format"]==1): ?>checked<?php endif; ?>>
 
             <input type="hidden" id="id" name="id" value="<?= $categorie["id"] ?>">
 

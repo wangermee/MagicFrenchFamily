@@ -100,15 +100,15 @@ if (isset($_POST["name"])) {
         $query = $pdo->prepare('INSERT INTO restricted_list (name, src, id_category) VALUES (:name, :src, :id_category) ');
         $query->execute(["name"=>$name,"src"=>$uploadfileName,"id_category"=>$categorie]);
 
-        if ($isSuccess=true) {
+        if ($isSuccess) {
             $arr = array("msg"=>"action completed with success","error"=>false);
+            echo(json_encode($arr));
+            return;
+        }else{
+            $arr = array("msg"=>"error, action aborted","error"=>false);
             echo(json_encode($arr));
             return;
         }
     }
-
-
-
-
  
 };

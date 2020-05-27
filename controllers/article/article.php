@@ -1,6 +1,4 @@
 <?php
-require ("models/dbConnect/dbConnect.php");
-session_start();
 
 $id=$_GET["id"];
 /* VERIFIVATION SI ID EXISTE */
@@ -14,6 +12,8 @@ if(count($articleID) !=0){
     $query= $pdo->prepare('SELECT articles.id AS id, title, content, id_category, id_users, name_img, src_img, DATE_FORMAT(creation_date, "%D %b %Y") AS creation_date, articles.state AS state, category.label, users.user_name   FROM articles INNER JOIN category ON category.id=articles.id_category INNER JOIN users ON users.id=articles.id_users WHERE articles.id=:id AND articles.state=0');
     $query->execute(["id"=>$id]);
     $article = $query->fetch(PDO::FETCH_ASSOC);
+
+    $content = html_entity_decode($article["content"]);//decode le code HTML 
 
     /* RECUPERATION DES COMMENTAIRES  */
     $query= $pdo->prepare('SELECT comments.id AS id, DATE_FORMAT(post_date, "%D %b %Y") AS post_date, reply, users.user_name FROM comments INNER JOIN users ON comments.id_users=users.id WHERE id_articles=:id AND state = 0');
