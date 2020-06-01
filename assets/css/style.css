@@ -387,6 +387,10 @@ main{
     flex-direction: column;
     align-items: center;
 }
+#home #displayBanner h2{
+    font-family: 'Rock Salt', cursive;
+    text-align: center;
+}
 #home #displayBanner #containerBanner div{
     width: 300px;
 	height: 237px;

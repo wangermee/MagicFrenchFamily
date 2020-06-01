@@ -91,7 +91,7 @@ if (isset($_POST["name"])) {
     /* AJOUT */
 
     $uploaddir = "../../uploadFile/restrictedList/";
-    $uploadfileName=basename($_FILES["file"]["name"]);//on permet d ecraser une image si elle a le meme nom 
+    $uploadfileName=date("h-i-s").".". basename($_FILES["file"]["name"]);//on ne permet pas d ecraser une image si elle a le meme nom 
     $uploadfile = $uploaddir.$uploadfileName;
 
 

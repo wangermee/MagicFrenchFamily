@@ -93,33 +93,29 @@ if ($_POST["action"] && $_POST["action"]== "register") {//creation de compte
 
 }else{// connexion a un compte existant
     
-
-
     $email=verifyInput($_POST["email"]);
     $password=verifyInput($_POST["password"]);
+
+ 
 
     /* CONNEXION A LA DB + RECUPERATION DU PASSWORD */
     $query = $pdo->prepare('SELECT password FROM users WHERE email=:email');
     $query->execute(["email"=>$email]);
     $user = $query->fetch(PDO::FETCH_ASSOC);
 
-
- 
     if ($user==false) {// in verifie si le mail saisi est attaché a un compte
         $arr = array("msg"=>"invalid request, email unknow ","error"=>true);
         echo(json_encode($arr));
         return;
     }
-
-
     
-    if (password_verify ($password , $user["password"] ) ) {
-
+    if (password_verify ($password , $user["password"]) ) {
+        
         /* CONNEXION A LA DB + RECUPERATION DU COMPTE USER */
         $query = $pdo->prepare('SELECT id, user_name, admin, email FROM users WHERE email=:email');
         $query->execute(["email"=>$email]);
         $user = $query->fetch(PDO::FETCH_ASSOC);
-
+        
         $_SESSION["user"] = [
             "id" => $user["id"],
             "user_name" => $user["user_name"],
@@ -132,11 +128,11 @@ if ($_POST["action"] && $_POST["action"]== "register") {//creation de compte
         return;
         
     }else{
+        
         $arr = array("msg"=>"invalid request, check your email or password","error"=>true);
         echo(json_encode($arr));
         return;
     }
-
 
 }
 
